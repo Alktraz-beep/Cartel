@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.options{
+    cursor:pointer;
+}
+.options:hover{
+    background-color: #edd1e9;
+}
+.options:focus{
+    background-color: #d8bfd5;
+}
+.mce-content-body{
+    position:relative;
+    overflow: hidden;
+  }

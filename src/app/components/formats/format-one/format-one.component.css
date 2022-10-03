@@ -1,0 +1,37 @@
+.secciones{
+    position: relative;
+    display: grid;
+    height: 90%;
+    width: 100%;
+    grid-template-columns: 24% auto 24%;
+    padding-top:10px;
+}
+
+.secc1{
+    position: relative;
+    display: grid;
+    grid-template-rows: 25% 25% 50%;
+    height: 100%;
+    width: 100%;
+}
+.apartado{
+    position: relative;
+    height: 100%;
+    width: 100%; 
+    padding-bottom: 10px;
+}
+
+.secc2{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+.secc3{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+}

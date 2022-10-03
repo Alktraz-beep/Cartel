@@ -1,0 +1,16 @@
+    
+    <div id="sidebar" class="sidebar-body fadeInLeft animated" *ngIf="!isCollapsed">
+        <app-herramienta nombre_herramienta="File"></app-herramienta>
+        <app-herramienta nombre_herramienta="Formato" (eventFormato)="enviarFormato($event)"></app-herramienta>
+        <app-herramienta nombre_herramienta="Color" (eventColor)="enviarColor($event)"></app-herramienta>
+
+
+    </div>
+    <div id="btn-sidebar" class="button-cierre bounceIn animated" (click)="collapseBar()" *ngIf="!isCollapsed">
+        <i class="bi bi-arrow-left" style="font-size: 25px;"></i>
+    </div>
+    <div id="btn-sidebar-abre" class="button-abre bounceIn animated" (click)="collapseBar()" *ngIf="isCollapsed">
+        <i class="bi bi-arrow-right" style="font-size: 25px;"></i>
+    </div>
+
+

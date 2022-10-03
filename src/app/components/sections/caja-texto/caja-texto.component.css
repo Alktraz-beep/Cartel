@@ -1,0 +1,38 @@
+.caja{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: 2px 2px 8px 4px #888888;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+}
+.titulo{
+    position: relative;
+    width: 100%;
+    background-color: #BFDAD7;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: rgb(57, 57, 57);
+}
+.contenido{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.restante{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    flex: auto;
+}
+
+h3{
+    font-size: 1.8vw;
+}

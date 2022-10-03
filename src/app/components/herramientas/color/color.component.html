@@ -1,0 +1,42 @@
+<hr>
+<div class="list-group">
+    <!-- COLOR PARA FONDO DE HOJA -->
+    <div class="list-group-item " style="text-align: center;">
+        Color del lienzo
+        <div class="row justify-content-center">
+            <input type="color" class="form-control form-control-color" 
+            (input)="cambiarColor(0)" 
+            [(ngModel)]="color[0]">
+        </div>
+    </div>
+
+    <div class="list-group-item " style="text-align: center;">
+        Fondo del título
+        <div class="row justify-content-center">
+            <input type="color" class="form-control form-control-color"
+            (input)="cambiarColor(1)" 
+            [(ngModel)]="color[1]"
+            >
+        </div>
+    </div>
+
+
+    <div class="list-group-item " style="text-align: center;">
+        Fondo de subtítulos
+        <div class="row justify-content-center">
+            <input type="color" class="form-control form-control-color"
+            (input)="cambiarColor(2)" 
+            [(ngModel)]="color[2]"
+            >
+        </div>
+    </div>
+
+    <div class="list-group-item " style="text-align: center;">
+        Fondo de apartados
+        <div class="row justify-content-center">
+            <input type="color" class="form-control form-control-color"
+            (input)="cambiarColor(3)" 
+            [(ngModel)]="color[3]">
+        </div>
+    </div>
+</div>

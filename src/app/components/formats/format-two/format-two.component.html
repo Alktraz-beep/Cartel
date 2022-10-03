@@ -1,0 +1,64 @@
+<app-banner></app-banner>
+<div style="padding-left: 1vw;padding-right: 1vw;padding-top: 1vh;padding-bottom: 1vh;width: 100%;height: 93%;">
+    <div style="height: 8%;">
+        <app-titulo-text [titulo_bg]="titulo_bg"></app-titulo-text>
+    </div>
+    <!-- INTRODUCCION -->
+    <div class="intro">
+        <app-caja-texto titulo="Introducción"
+        [subtitulos_color]="subtitulos_color"
+        [apartados_bg]="apartados_bg"></app-caja-texto>
+    </div>
+    <!-- OBJETIVOS -->
+    <div class="objetivos">
+        <app-caja-texto titulo="Objetivos"
+        [subtitulos_color]="subtitulos_color"
+        [apartados_bg]="apartados_bg"></app-caja-texto>
+    </div>
+    <div class="secciones">
+        <!-- SECCION 1 -->
+        <div class="secc1">
+            <!-- GRAFICAS -->
+            <div class="apartado">
+                
+            </div>
+            <!-- IMAGENES -->
+            <div style="background-color: red;">
+                
+            </div>
+        </div>
+        <!-- SECCION 2 -->
+        <div class="secc2">
+            <!-- METODOLOGIA -->
+            <div class="apartado">
+                <app-caja-texto titulo="Metodología"
+                [subtitulos_color]="subtitulos_color"
+                [apartados_bg]="apartados_bg"></app-caja-texto>
+            </div>
+            <!-- RESULTADOS -->
+            <div style="background-color: azure;">
+                <app-caja-texto titulo="Resultados"
+                [subtitulos_color]="subtitulos_color"
+                [apartados_bg]="apartados_bg"></app-caja-texto>
+            </div>
+        </div>
+        <!-- SECCION 3 -->
+        <div class="secc3">
+            <div class="apartado">
+                <app-caja-texto titulo="Conclusión"
+                [subtitulos_color]="subtitulos_color"
+                [apartados_bg]="apartados_bg"></app-caja-texto>
+            </div>
+            <div class="apartado">
+                <app-caja-texto titulo="Referencias"
+                [subtitulos_color]="subtitulos_color"
+                [apartados_bg]="apartados_bg"></app-caja-texto>
+            </div>
+            <div>
+                <app-caja-texto titulo="Datos de contacto"
+                [subtitulos_color]="subtitulos_color"
+                [apartados_bg]="apartados_bg"></app-caja-texto>
+            </div>
+        </div>
+    </div>
+</div>

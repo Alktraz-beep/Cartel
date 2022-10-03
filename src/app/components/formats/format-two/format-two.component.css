@@ -1,0 +1,39 @@
+.intro, .objetivos{
+    margin-top: 1vh;
+    height: 10%;
+}
+
+.secciones{
+    padding-top: 1vh;
+    height: 71%;
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 27% auto 27%;
+}
+
+.secc1{
+    height: 100%;
+    width: 100%;
+    padding-right: 5px;
+    display: grid;
+    grid-template-rows: 50% auto;
+}
+
+.secc2{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 45% auto;
+}
+.secc3{
+    height: 100%;
+    width: 100%;
+    padding-left: 5px;
+    display: grid;
+    grid-template-rows: 40% 40% auto;
+}
+
+.apartado{
+    margin-bottom: 1vh;
+}
