@@ -18,6 +18,8 @@ import { CajaTextoComponent } from './components/sections/caja-texto/caja-texto.
 import { FormatTwoComponent } from './components/formats/format-two/format-two.component';
 import { FormatThreeComponent } from './components/formats/format-three/format-three.component';
 import { ColorComponent } from './components/herramientas/color/color.component';
+import { ImageInputComponent } from './components/sections/image-input/image-input.component';
+import { MultiimageInputComponent } from './components/sections/multiimage-input/multiimage-input.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ColorComponent } from './components/herramientas/color/color.component'
     CajaTextoComponent,
     FormatTwoComponent,
     FormatThreeComponent,
-    ColorComponent
+    ColorComponent,
+    ImageInputComponent,
+    MultiimageInputComponent
   ],
   imports: [
     BrowserModule,

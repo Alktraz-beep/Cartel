@@ -39,12 +39,28 @@
             <div class="secc2">
                <!-- RESULTADOS -->
                <div class="apartado">
-                  <div style=" height: 100%; width: 100%;">
-
+                  <div class="apartado_res_g1_g2">
+                     <!-- RESULTADOS -->
+                     <div  style="padding-bottom: 1vw;height: 100%;width:100%;position: relative;">
+                        
+                        <app-caja-texto titulo="Resultados" [subtitulos_color]="subtitulos_color"
+                        [apartados_bg]="apartados_bg"></app-caja-texto>
+                     </div>
+                     <!-- GRAFICA 1 -->
+                     <div  style="padding-bottom: 1vw;position: relative;height: 100%;">
+                        <app-image-input
+                        label="Gráfica 1"></app-image-input>
+                     </div>
+                     <!-- GRAFICA 2 -->
+                     <div>
+                        <app-image-input
+                        label="Gráfica 2"></app-image-input>
+                     </div>
                   </div>
                </div>
-               <!-- IMAGENES -->
+               <!-- MULTIIMAGENES -->
                <div>
+                  <app-multiimage-input></app-multiimage-input>
                </div>
             </div>
          </div>

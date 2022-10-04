@@ -26,7 +26,7 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-rows: 60% 40%;
+    grid-template-rows: 80% 20%;
 }
 .secc3{
     position: relative;
@@ -34,4 +34,12 @@
     width: 100%;
     display: grid;
     grid-template-rows: 25% 25% 25% 25%;
+}
+
+.apartado_res_g1_g2{
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 30% 30%;
+    height: 100%;
+    width: 100%;
 }
