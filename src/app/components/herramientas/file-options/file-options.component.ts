@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-file-options',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./file-options.component.css']
 })
 export class FileOptionsComponent implements OnInit {
-
-  constructor() { }
+  //INYECTA SEVICIO
+  constructor(private apiS:ApiService) { }
 
   ngOnInit(): void {
   }
 
+    // FUNCION QUE EMITE LA SEÑAL DE GUARDADO 
+  emitSave(){
+    //emite señal de guardado
+    this.apiS.servicioGuardado();
+  }
+
+  
+    // FUNCION QUE EMITE LA SEÑAL DE preview 
+    emitPreview(){
+      //emite señal de guardado
+      this.apiS.servicioPreview();
+    }
 }

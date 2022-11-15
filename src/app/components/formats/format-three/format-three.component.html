@@ -2,19 +2,25 @@
 <div style="padding-left: 1vw;padding-right: 1vw;padding-top: 1vh;padding-bottom: 1vh;width: 100%;height: 93%;display: flex;flex-direction: column;">
     
     <div style="height: 7%;">
-        <app-titulo-text [titulo_bg]="titulo_bg"></app-titulo-text>
+        <app-titulo-text [titulo_bg]="titulo_bg"
+        [html]="cartel.titulo"
+      [cartel]="cartel"></app-titulo-text>
     </div>
     <!-- PRIMER ROW DEL CUADRANTE 1-->
     <div class="row" style="height: 16%;margin-top:1vh;padding-left: 1vw;padding-right: 1vw;">
         <!-- INTRO -->
         <div class="col-6" style="padding-right: 1vw;padding-left: 0%;">
             <app-caja-texto titulo="Introducción" [subtitulos_color]="subtitulos_color"
-            [apartados_bg]="apartados_bg"></app-caja-texto>
+            [apartados_bg]="apartados_bg"
+            [html]="cartel.intro"
+            [cartel]="cartel"></app-caja-texto>
         </div>
         <!-- METODOLOGIA -->
         <div class="col-6" style="padding-left: 1vw;padding-right: 0vw;">
             <app-caja-texto titulo="Metodología" [subtitulos_color]="subtitulos_color"
-            [apartados_bg]="apartados_bg"></app-caja-texto>
+            [apartados_bg]="apartados_bg"
+            [html]="cartel.metodologia"
+            [cartel]="cartel"></app-caja-texto>
         </div>
     </div>
     <!-- SEGUNDO ROW DEL CUADRANTE 1 -->
@@ -22,12 +28,16 @@
         <!-- OBJETIVOS -->
         <div class="col-6" style="padding-right: 1vw;padding-left: 0%;">
             <app-caja-texto titulo="Objetivos" [subtitulos_color]="subtitulos_color"
-            [apartados_bg]="apartados_bg"></app-caja-texto>
+            [apartados_bg]="apartados_bg"
+            [html]="cartel.objetivos"
+            [cartel]="cartel"></app-caja-texto>
         </div>
         <!-- RESULTADOS -->
         <div class="col-6" style="padding-left: 1vw;padding-right: 0%;">
             <app-caja-texto titulo="Resultados" [subtitulos_color]="subtitulos_color"
-            [apartados_bg]="apartados_bg"></app-caja-texto>
+            [apartados_bg]="apartados_bg"
+            [html]="cartel.resultados"
+            [cartel]="cartel"></app-caja-texto>
         </div>
     </div>
     <!-- PRIMER ROW DEL CUADRANTE 2-->
@@ -67,16 +77,25 @@
     <!-- DATOS DE FOOTER -->
     <div class="row" style="flex: auto;padding-left: 1vw;padding-right: 1vw;padding-top: 1vh;">
         <div class="row" style="height:40%;padding-bottom: 1vh;" >
+            <!-- conclusion -->
             <app-caja-texto titulo="Conclusión" [subtitulos_color]="subtitulos_color"
-            [apartados_bg]="apartados_bg"></app-caja-texto>
+            [apartados_bg]="apartados_bg"
+            [html]="cartel.conclusion"
+            [cartel]="cartel"></app-caja-texto>
         </div>  
         <div class="row" style="height:40%;padding-bottom: 1vh;" >
+            <!-- referencias -->
             <app-caja-texto titulo="Referencias" [subtitulos_color]="subtitulos_color"
-            [apartados_bg]="apartados_bg"></app-caja-texto>
+            [apartados_bg]="apartados_bg"
+            [html]="cartel.referencias"
+            [cartel]="cartel"></app-caja-texto>
         </div>
         <div class="row" style="height:20%;" >
-            <app-caja-texto titulo="Datos de contacto" [subtitulos_color]="subtitulos_color"
-            [apartados_bg]="apartados_bg"></app-caja-texto>
+            <!-- datos de contacto -->
+            <app-caja-texto titulo="Datos de Contacto" [subtitulos_color]="subtitulos_color"
+            [apartados_bg]="apartados_bg"
+            [html]="cartel.datos_contacto"
+            [cartel]="cartel"></app-caja-texto>
         </div>
     </div>
 </div>

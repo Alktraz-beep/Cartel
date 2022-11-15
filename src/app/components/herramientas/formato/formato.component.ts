@@ -1,5 +1,6 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { element } from 'protractor';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-formato',
@@ -9,7 +10,7 @@ import { element } from 'protractor';
 export class FormatoComponent implements OnInit {
   //EVENTO QUE EMITIRA EL TIPO DE FORMATO
  @Output() eventoDaFormato:EventEmitter<string>=new EventEmitter<string>();
-  constructor() { }
+  constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +24,8 @@ export class FormatoComponent implements OnInit {
 
     //SE EMITE EL TIPO DE FORMATO QUE SELECCIONÓ
     this.eventoDaFormato.emit(tipo);
+    //ACTUALIZA LOS DATOS
+    this.apiService.servicioActualiza();
     console.log("formato actual forms "+tipo);
   }
 

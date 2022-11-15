@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
   @Output() eventoFormato=new EventEmitter<string>();
   //EVENTO QUE ENVIA COLOR
   @Output() eventoColor=new EventEmitter<Color>();
+  
   ngOnInit(): void {
   }
 

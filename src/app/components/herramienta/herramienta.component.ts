@@ -29,4 +29,5 @@ export class HerramientaComponent implements OnInit {
   enviarColor(color:Color){
     this.eventColor.emit(color);
   }
+  
 }

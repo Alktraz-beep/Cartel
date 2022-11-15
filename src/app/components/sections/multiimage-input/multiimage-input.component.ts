@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-multiimage-input',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class MultiimageInputComponent implements OnInit {
   url:string="";
   paths:string[]=[];
-  constructor() { }
+  constructor(private apiService:ApiService) { 
+    
+  }
 
   ngOnInit(): void {
   }

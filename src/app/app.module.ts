@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgwWowModule } from 'ngx-wow';
 import { FormsModule } from "@angular/forms";
+import {  HttpClientModule } from '@angular/common/http';
 
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HerramientaComponent } from './components/herramienta/herramienta.component';
@@ -20,6 +21,13 @@ import { FormatThreeComponent } from './components/formats/format-three/format-t
 import { ColorComponent } from './components/herramientas/color/color.component';
 import { ImageInputComponent } from './components/sections/image-input/image-input.component';
 import { MultiimageInputComponent } from './components/sections/multiimage-input/multiimage-input.component';
+
+import { EditablePageComponent } from './components/pages/editable-page/editable-page.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { PreviewPageComponent } from './components/pages/preview-page/preview-page.component';
+import { ImageOutComponent } from './components/image-out/image-out.component';
+import { MultiimageOutComponent } from './components/multiimage-out/multiimage-out.component';
+
 
 @NgModule({
   declarations: [
@@ -36,14 +44,20 @@ import { MultiimageInputComponent } from './components/sections/multiimage-input
     FormatThreeComponent,
     ColorComponent,
     ImageInputComponent,
-    MultiimageInputComponent
+    MultiimageInputComponent,
+    EditablePageComponent,
+    PreviewPageComponent,
+    DialogComponent,
+    ImageOutComponent,
+    MultiimageOutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     EditorModule,
     NgwWowModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

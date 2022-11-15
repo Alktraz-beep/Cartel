@@ -1,0 +1,34 @@
+<!-- <p>{{cartel | json}}</p> -->
+<div class="contenedor-paginas" *ngIf="cartel!=null">
+    <div class="row justify-content-center">
+        <div class="pagina" [style]="'background-color:'+color[0]+';'">
+          
+          <div class="body-formato">
+            <!-- AQUI VIENEN LAS DIFERENTES FORMATOS -->
+            <app-format-one 
+            *ngIf="cartel.formato=='f1'" class="fadeIn animated"
+            [titulo_bg]="color[1]"
+            [subtitulos_color]="color[2]"
+            [apartados_bg]="color[3]"
+            [cartel]="cartel"
+            ></app-format-one>
+  
+            <app-format-two 
+            *ngIf="cartel.formato=='f2' " class="fadeIn animated"
+            [titulo_bg]="color[1]"
+            [subtitulos_color]="color[2]"
+            [apartados_bg]="color[3]"
+            [cartel]="cartel"
+            ></app-format-two>
+  
+            <app-format-three 
+            *ngIf="cartel.formato=='f3'" class="fadeIn animated"
+            [titulo_bg]="color[1]"
+            [subtitulos_color]="color[2]"
+            [apartados_bg]="color[3]"
+            [cartel]="cartel"
+            ></app-format-three>
+          </div>
+        </div>
+    </div>
+  </div>

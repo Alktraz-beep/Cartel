@@ -2,7 +2,9 @@
  <app-banner></app-banner>
  <div style="padding-left: 1vw;padding-right: 1vw;padding-top: 1vh;padding-bottom: 1vh;width: 100%;height: 94%;">
    <div style="height: 8%;">
-      <app-titulo-text [titulo_bg]="titulo_bg"></app-titulo-text> 
+      <app-titulo-text [titulo_bg]="titulo_bg"
+      [html]="cartel.titulo"
+      [cartel]="cartel"></app-titulo-text> 
    </div>
    <div class="secciones">
       <!-- COLUMNA 1 -->
@@ -13,21 +15,27 @@
                <div class="apartado">
                   <div style="height: 100%; width: 100%;">
                      <app-caja-texto titulo="Introducción" [subtitulos_color]="subtitulos_color"
-                     [apartados_bg]="apartados_bg"></app-caja-texto>
+                     [apartados_bg]="apartados_bg"
+                     [html]="cartel.intro"
+                     [cartel]="cartel"></app-caja-texto>
                   </div>
                </div>
                <!-- OBJETIVOS -->
                <div class="apartado">
                   <div style="position:relative;height: 100%; width: 100%;">
                      <app-caja-texto titulo="Objetivos" [subtitulos_color]="subtitulos_color"
-                     [apartados_bg]="apartados_bg"></app-caja-texto>
+                     [apartados_bg]="apartados_bg"
+                     [html]="cartel.objetivos"
+                     [cartel]="cartel"></app-caja-texto>
                   </div>
                </div>
                <!-- METODOLOGIA -->
                <div>
                   <div style="height: 100%; width: 100%;">
                      <app-caja-texto titulo="Metodología" [subtitulos_color]="subtitulos_color"
-                     [apartados_bg]="apartados_bg"></app-caja-texto>
+                     [apartados_bg]="apartados_bg"
+                     [html]="cartel.metodologia"
+                     [cartel]="cartel"></app-caja-texto>
                   </div>
                </div>
             </div>
@@ -44,23 +52,31 @@
                      <div  style="padding-bottom: 1vw;height: 100%;width:100%;position: relative;">
                         
                         <app-caja-texto titulo="Resultados" [subtitulos_color]="subtitulos_color"
-                        [apartados_bg]="apartados_bg"></app-caja-texto>
+                        [apartados_bg]="apartados_bg"
+                        [html]="cartel.resultados"
+                        [cartel]="cartel"></app-caja-texto>
                      </div>
                      <!-- GRAFICA 1 -->
                      <div  style="padding-bottom: 1vw;position: relative;height: 100%;">
-                        <app-image-input
+                        <app-image-input *ngIf="!disabled"
                         label="Gráfica 1"></app-image-input>
+                        <app-image-out *ngIf="disabled"></app-image-out>
                      </div>
                      <!-- GRAFICA 2 -->
                      <div>
-                        <app-image-input
+                        <app-image-input *ngIf="!disabled"
                         label="Gráfica 2"></app-image-input>
+                        <app-image-out *ngIf="disabled"></app-image-out>
+
                      </div>
                   </div>
                </div>
                <!-- MULTIIMAGENES -->
                <div>
-                  <app-multiimage-input></app-multiimage-input>
+                  <app-multiimage-input *ngIf="!disabled"
+                  ></app-multiimage-input>
+                  <app-multiimage-out *ngIf="disabled"
+                  ></app-multiimage-out>
                </div>
             </div>
          </div>
@@ -73,28 +89,36 @@
                <div class="apartado ">
                   <div style="height: 100%; width: 100%;position: relative;">
                      <app-caja-texto titulo="Conclusión" [subtitulos_color]="subtitulos_color"
-                     [apartados_bg]="apartados_bg"></app-caja-texto>
+                     [apartados_bg]="apartados_bg"
+                     [html]="cartel.conclusion"
+                     [cartel]="cartel"></app-caja-texto>
                   </div>
                </div>
                <!-- REFERENCIAS -->
                <div class="apartado">
                   <div style="height: 100%; width: 100%;">
                      <app-caja-texto titulo="Referencias" [subtitulos_color]="subtitulos_color"
-                     [apartados_bg]="apartados_bg"></app-caja-texto>
+                     [apartados_bg]="apartados_bg"
+                     [html]="cartel.referencias"
+                     [cartel]="cartel"></app-caja-texto>
                   </div>
                </div>
                <!-- DATOS DE CONTACTO -->
                <div class="apartado">
                   <div style="height: 100%; width: 100%;">
                      <app-caja-texto titulo="Datos de Contacto" [subtitulos_color]="subtitulos_color"
-                     [apartados_bg]="apartados_bg"></app-caja-texto>
+                     [apartados_bg]="apartados_bg"
+                     [html]="cartel.datos_contacto"
+                     [cartel]="cartel"></app-caja-texto>
                   </div>
                </div>
                <!--  AGRADECIMIENTOS -->
                <div>
                   <div style="height: 100%; width: 100%;">
                      <app-caja-texto titulo="Agradecimientos" [subtitulos_color]="subtitulos_color"
-                     [apartados_bg]="apartados_bg"></app-caja-texto>
+                     [apartados_bg]="apartados_bg"
+                     [html]="cartel.agradecimientos"
+                     [cartel]="cartel"></app-caja-texto>
                   </div>
                </div>
             </div>
