@@ -29,15 +29,18 @@ export class EditablePageComponent implements OnInit {
   public color:string[]=["","#8CBDB9","#BFDAD7",""];
   //EL CARTEL POR DEFECTO
   cartel!:Cartel;
-  // DIV POR DEFAULT
+  // DIV POR DEFAULT TODOS LOS TITULOS TIENEN ESTE POR DEFAULT DE INICIO ABAJO SE ACOMPLETA
   html:string="<div id='cont' style='position:absolute;width:100%;color:black;font-size:1.5vw;' >";
-
+  //GRAFICAS E IMAGENES DEL CARTEL SERAN LLENADAS POSTERIORMENTE
+  graficas:string[]=["",""];
+  images:string[]=[];
   //ANIMACIONES Y SERVICIOS DE API Y DIALOG PARA PONER EL NOMBRE
   constructor(private _wowService: NgwWowService,
     private apiService:ApiService,
     private route:Router,){
+      //=======================================================GUARDADO===============================
     apiService.guardado.subscribe(
-      //CUANDO SE CAPTA EL GUARDDO
+      //CUANDO SE CAPTA EL GUARDADO
       ()=>{
         //SI YA LE PUSO NOMBRE AL CARTEL
         if(this.nombre!=""){
@@ -49,7 +52,7 @@ export class EditablePageComponent implements OnInit {
 
           this.cartel.nombre=this.nombre;
 
-          console.log(JSON.stringify(this.cartel));
+        
           //SE LLAMA A LA API PARA QUE GUARDE EL CARTEL
           
           apiService.guardarCartel(this.cartel).subscribe(
@@ -62,23 +65,52 @@ export class EditablePageComponent implements OnInit {
               } 
             }
           );
+        }else{
+          //SI NO TIENE NOMBRE SE AVISA
+          window.alert("Tu documento requiere un nombre!");
         }
       }
 
     );
+    //===========================================FINALIZADO=========================================================
+    //AL RECIBIR LA SEÑAL DE FINALIZADO
+    apiService.finalize.subscribe(
+      ()=>{
+        if(this.nombre!=""){
+
+          //SE ACTUALIZA EL CARTEL CON LOS COLORES,NOMBRE
+          this.cartel.formato=this.formato_actual;
+          let colors=btoa(this.color.toString());//se encriptan el array de los colores 
+          this.cartel.colores=colors;
+
+          this.cartel.nombre=this.nombre;
+          
+          //SE ENVIA EL CARTEL A FINALIZAR Y SI AUN NO EXISTE LO INSERTA YA PUBLICADO
+          apiService.actualizaCartel(this.cartel).subscribe();
+        }else{
+          //SI NO TIENE NOMBRE SE AVISA
+          window.alert("Tu documento requiere un nombre!");
+        }
+      }
+    );
+    //=======================================================PREVIEW=================================================
+
+    //CONTADOR YA QUE CUANDO SE DA PREVIEW TODOS LOS COMPONENTES ENVIAN LA SEÑAL Y HASTA QUE EL ULTIMO LO HAGA SE ENVIAN TODOS
     let cont=0;
     //EVENTO CUANDO LE DA A PREVIEW 
     apiService.enviar.subscribe(
 
       ()=>{
         cont+=1;
-        if(cont==9){
+        console.log(cont);
+        if(cont==11 ){
           //SE ACTUALIZA EL CARTEL
           this.cartel.formato=this.formato_actual;
           let colors=btoa(this.color.toString());//se encriptan el array de los colores 
-          this.cartel.colores=colors;
+          this.cartel.colores=colors; 
+          console.log(this.graficas.toString());
+          this.cartel.graficas=this.graficas.toString();
           //SE PONE LA REDIRECCION PRINCIPAL
-
           const url = this.route.serializeUrl(
             this.route.createUrlTree([`/preview`])
           );
@@ -88,7 +120,7 @@ export class EditablePageComponent implements OnInit {
           console.log(JSON.stringify(this.cartel).replace(/%/g,"/37"));
           
           window.open(url+"?cartel="+JSON.stringify(this.cartel).replace(/%/g,"/37").replace(/&/g,"/38"));
-          cont=0;
+          cont=0; 
         }
       }
     );
@@ -113,8 +145,8 @@ export class EditablePageComponent implements OnInit {
       referencias:this.html+"Escribe tus referencias</div>",
       datos_contacto:this.html+"Escribe tus datos</div>",
       agradecimientos:this.html+"Escribe tus agradecimientos</div>",
-      imagenes:"",
-      graficas:""
+      imagenes:""+this.images.toString(),
+      graficas:""+this.graficas.toString()
     };
   }
   //FUNCION OBTIENE LO QUE LLEGO DE SIDEBAR Y LO CAMBIA

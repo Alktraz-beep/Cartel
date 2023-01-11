@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { EditorModule } from '@tinymce/tinymce-angular';
-import { AppRoutingModule } from './app-routing.module';
+import { EditorModule } from '@tinymce/tinymce-angular';//PARA TINYMCE
+import { AppRoutingModule } from './app-routing.module';//PARA EL RUTEO
 import { AppComponent } from './app.component';
-import { NgwWowModule } from 'ngx-wow';
+import { NgwWowModule } from 'ngx-wow';//PARA ANIMACIONES
 import { FormsModule } from "@angular/forms";
-import {  HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';//PARA HACER PETICIONES
+//import { NgImageSliderComponent } from 'ng-image-slider';//PARA EL CARROUSEL
 
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HerramientaComponent } from './components/herramienta/herramienta.component';
@@ -58,6 +59,7 @@ import { MultiimageOutComponent } from './components/multiimage-out/multiimage-o
     NgwWowModule,
     FormsModule,
     HttpClientModule,
+    //NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

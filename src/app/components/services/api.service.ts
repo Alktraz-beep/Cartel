@@ -10,8 +10,12 @@ export class ApiService {
   //URLS PARA SERVICIOS
   core:string="http://localhost/Cartel/api/";
   save:string="guardar.php";
-  //EVENTOS QUE SE EMITEN PARA AVISAR QUE SE QUIERE REALIZAR UNA PREVIEW
-  guardado=new EventEmitter<boolean>();
+  update:string="actualizar.php";
+
+  //EVENTOS QUE SE EMITEN PARA AVISAR QUE SE QUIERE REALIZAR UNA PREVIEW,GUARDAR,ENVIAR DATOS O ACTUALIZAR EN LA BASE DE DATOS
+  guardado=new EventEmitter<boolean>();//PARA CUANDO SE DESEA GUARDAR 
+  finalize=new EventEmitter<boolean>();//PARA CUANDO SE DESEA FINALIZAR 
+
   preview=new EventEmitter<boolean>();
   actualizar=new EventEmitter<boolean>();
   enviar=new EventEmitter<boolean>();
@@ -27,6 +31,10 @@ export class ApiService {
   //EMITE LA SEÑAL DE GUARDADO
   servicioGuardado(){
     this.guardado.emit(true);
+  }
+  //EMITE LA SEÑAL DE FINALIZADO/PUBLICAR
+  servicioFinalize(){
+    this.finalize.emit(true);
   }
   //EMITE LA SEÑAL DE MOSTRAR PREVIEW
   servicioPreview(){
@@ -47,6 +55,13 @@ export class ApiService {
   //OBTIENE EL SERVICIO PARA GUARDAR EN LA BASE DE DATOS
   guardarCartel(cartel_:Cartel):Observable<any>{
     const url=`${this.core}${this.save}`+"?cartel="+encodeURIComponent(JSON.stringify(cartel_));
+    console.log(url);
+
+    return this.http.get<any>(url);
+  }
+  //OBTENE EL SERVICIO PARA FINALIZAR EL CARTEL EN LA BASE DE DATOS
+  actualizaCartel(cartel_:Cartel):Observable<any>{
+    const url=`${this.core}${this.update}`+"?cartel="+encodeURIComponent(JSON.stringify(cartel_));
     console.log(url);
 
     return this.http.get<any>(url);

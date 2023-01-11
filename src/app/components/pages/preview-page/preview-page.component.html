@@ -4,13 +4,16 @@
         <div class="pagina" [style]="'background-color:'+color[0]+';'">
           
           <div class="body-formato">
-            <!-- AQUI VIENEN LAS DIFERENTES FORMATOS -->
+            <!-- AQUI VIENEN LAS DIFERENTES FORMATOS LOS SUFIJOS R SON PARA READONLY-->
             <app-format-one 
             *ngIf="cartel.formato=='f1'" class="fadeIn animated"
             [titulo_bg]="color[1]"
             [subtitulos_color]="color[2]"
             [apartados_bg]="color[3]"
             [cartel]="cartel"
+            
+            [graficasR]="graficas"
+            [imagesR]="images"
             ></app-format-one>
   
             <app-format-two 
@@ -19,6 +22,9 @@
             [subtitulos_color]="color[2]"
             [apartados_bg]="color[3]"
             [cartel]="cartel"
+
+            [graficasR]="graficas"
+            [imagesR]="images"
             ></app-format-two>
   
             <app-format-three 
@@ -27,6 +33,9 @@
             [subtitulos_color]="color[2]"
             [apartados_bg]="color[3]"
             [cartel]="cartel"
+            
+            [graficasR]="graficas"
+            [imagesR]="images"
             ></app-format-three>
           </div>
         </div>

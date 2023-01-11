@@ -25,4 +25,10 @@ export class FileOptionsComponent implements OnInit {
       //emite señal de guardado
       this.apiS.servicioPreview();
     }
+
+    // FUNCION QUE EMITE LA SEÑAL DE FINALIZADO/PUBLICAR 
+    emitFinalize(){
+      //emite señal de guardado
+      this.apiS.servicioFinalize();
+    }
 }

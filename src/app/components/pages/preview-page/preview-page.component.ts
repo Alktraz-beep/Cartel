@@ -11,6 +11,8 @@ import { ApiService } from '../../services/api.service';
 })
 export class PreviewPageComponent implements OnInit {
   cartel!:Cartel;
+  graficas:string[]=[];
+  images:string[]=[];
   public color:string[]=["","#8CBDB9","#BFDAD7",""];
 
 
@@ -22,7 +24,8 @@ export class PreviewPageComponent implements OnInit {
       params=>{
         //SE REMPLAZA EL CODIGO POR EL %
         this.cartel=JSON.parse(params['cartel'].replace(/\/37/g,"%").replace(/\/38/g,"&"));
-        console.log("hoka  "+this.cartel.titulo);
+        this.graficas=this.cartel.graficas.split(",");
+        this.images=this.cartel.imagenes.split(",");
       }
     );
     //SE EMITE EL SERVICIO MODO READONLY UNA VEZ CARGARON TODOS LOS ELEMENTOS

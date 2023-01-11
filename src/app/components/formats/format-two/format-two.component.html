@@ -28,18 +28,31 @@
             <div class="apartado">
                 <div style="height: 100%;width:100%;display: grid;grid-template-rows:50% 50;">
                     <div style="height:100%;padding-bottom: 1vw;">
-                        <app-image-input
-                        label="Gráfica 1"></app-image-input>
+                        <!-- DEPENDIENDO DE READ ONLY SE PONE UNA U OTRA -->
+                        <app-image-input *ngIf="!disabled"
+                        label="Gráfica 1"
+                        tipo="GRAF1"
+                        [urlImg]="graficas"></app-image-input>
+                        <app-image-out *ngIf="disabled"
+                        [url]="graficasR[0]"></app-image-out>
                     </div>
                     <div style="height:100%;">
-                        <app-image-input
-                        label="Gráfica 2"></app-image-input>
+                        <app-image-input *ngIf="!disabled"
+                        label="Gráfica 2"
+                        tipo="GRAF2"
+                        [urlImg]="graficas"
+                        ></app-image-input>
+                        <app-image-out *ngIf="disabled"
+                        [url]="graficasR[1]"></app-image-out>
                     </div>
                 </div>
             </div>
             <!-- IMAGENES -->
             <div style="width: 100%;">
-                <app-multiimage-input></app-multiimage-input>
+                <app-multiimage-input *ngIf="!disabled"></app-multiimage-input>
+                <app-multiimage-out *ngIf="disabled"
+                  [isFullScreen]='true'
+                  ></app-multiimage-out>
             </div>
         </div>
         <!-- SECCION 2 -->

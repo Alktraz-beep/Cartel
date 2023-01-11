@@ -38,7 +38,6 @@ export class CajaTextoComponent implements OnInit {
     //CUANDO SE EMITE EL READONLY
     apiService.readonly.subscribe(()=>{
       this.disabled=true;
-      console.log("poner disable");
     });
    }
 

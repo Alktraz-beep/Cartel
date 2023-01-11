@@ -10,7 +10,11 @@ import { Cartel } from '../../interface/cartel.interface';
 
 //CLASE QUE TIENE EL FORMATO 1
 export class FormatOneComponent implements OnInit {
+  //ENTRADAS DE READONLY
   disabled:boolean=false;//dice si esta en modo readonly
+  @Input() graficasR:string[]=[];
+  @Input() imagesR:string[]=[];
+  //ENTRADAS
   //COLOR DE FONDO DE TITULO
   @Input() titulo_bg:string="";
   //COLOR DE FONDO DE SUBTITULOS
@@ -19,12 +23,14 @@ export class FormatOneComponent implements OnInit {
   @Input() apartados_bg:string="";
   //EL CARTEL CON LOS DATOS
   @Input() cartel!:Cartel;
+  //LAS GRAFICAS E IMAGENES
+  @Input() graficas!:string[];
   //SE INYECTA SERVICIO
   constructor(private apiS:ApiService) { 
      //CUANDO SE EMITE EL READONLY
      apiS.readonly.subscribe(()=>{
+      //CAPTA EL MODO READONLY
       this.disabled=true;
-      console.log("poner disable");
     });
   }
 

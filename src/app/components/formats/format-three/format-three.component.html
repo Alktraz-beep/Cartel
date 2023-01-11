@@ -24,7 +24,7 @@
         </div>
     </div>
     <!-- SEGUNDO ROW DEL CUADRANTE 1 -->
-    <div class="row" style="height: 16%;margin-top:1vh;padding-left: 1vw;padding-right: 1vw;">
+    <div class="row" style="height: 16%;margin-top:1vh;padding-left: 1vw;padding-right: 1vw; ">
         <!-- OBJETIVOS -->
         <div class="col-6" style="padding-right: 1vw;padding-left: 0%;">
             <app-caja-texto titulo="Objetivos" [subtitulos_color]="subtitulos_color"
@@ -41,36 +41,52 @@
         </div>
     </div>
     <!-- PRIMER ROW DEL CUADRANTE 2-->
-    <div class="row" style="height: 15%;margin-top:1vh;padding-left: 3vw;padding-right: 3vw;">
+    <div class="row" style="height: 15%;margin-top:1vh;padding-left: 3vw;padding-right: 3vw; ">
         <div class="col-6" style="padding-right: 1vw;padding-left: 0%;">
             <!-- GRAFICA1 -->
             <div style="height: 100%;">
-                <app-image-input
-                        label="Gráfica 1"></app-image-input>
+                <app-image-input *ngIf="!disabled"
+                label="Gráfica 1"
+                tipo="GRAF1"
+                [urlImg]="graficas"></app-image-input>
+
+                <app-image-out *ngIf="disabled"
+                [url]="graficasR[0]"></app-image-out>
             </div>
         </div>
         <div class="col-6" style="padding-left: 1vw;padding-right: 0%;">
             <!-- IMG1 -->
             <div style="height: 100%;">
-                <app-image-input
-                        label="Imagen 1"></app-image-input>
+                <!-- DEPENDIENDO DE READONLY SE PONE EL TIPO DE IMAGEN -->
+                <app-image-input *ngIf="!disabled"
+                label="Imagen 1"
+                ></app-image-input>
+
+                <app-image-out *ngIf="disabled"
+                [url]="graficasR[1]"></app-image-out>
             </div>
         </div>
     </div>
+    
     <!-- SEGUNDO ROW DEL CUADRANTE 2-->
     <div class="row" style="height: 15%;margin-top:1vh;padding-left: 3vw;padding-right: 3vw;">
         <div class="col-6" style="padding-right: 1vw;padding-left: 0%;">
             <!-- GRAFICA2 -->
             <div style="height: 100%;">
-                <app-image-input
-                        label="Gráfica 2"></app-image-input>
+                <app-image-input *ngIf="!disabled"
+                label="Gráfica 2"
+                tipo="GRAF2"
+                [urlImg]="graficas"></app-image-input>
+
+                <app-image-out *ngIf="disabled"></app-image-out>
             </div>
         </div>
         <div class="col-6" style="padding-left: 1vw;padding-right: 0%;">
             <!-- IMG2 -->
             <div style="height: 100%;">
-                <app-image-input
-                        label="Imagen 1"></app-image-input>
+                <app-image-input *ngIf="!disabled"
+                label="Imagen 1"></app-image-input>
+                <app-image-out *ngIf="disabled"></app-image-out>
             </div>
         </div>
     </div>
