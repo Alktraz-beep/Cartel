@@ -4,14 +4,17 @@ import { EditablePageComponent } from './components/pages/editable-page/editable
 import { PreviewPageComponent } from './components/pages/preview-page/preview-page.component';
 
 const routes: Routes = [
+  //PARA CARTEL SOLO SE DEJA ASI
   { path: '', pathMatch: 'full', component: EditablePageComponent },
-  { path: 'preview',  component: PreviewPageComponent},
+  //PARA GENERAR EL PREVIEW DESCOMENTAR ESTE Y COMENTAR EL DE ARRIBA
+  //{ path: '',  component: PreviewPageComponent },
+  //{ path: 'preview',  component: PreviewPageComponent},
   //{ path: '**', redirectTo: ''},
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

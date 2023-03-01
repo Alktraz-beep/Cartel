@@ -1,6 +1,6 @@
 <div class="border-input">
     <div class="row m-0 justify-content-center" style="height: 100%;width: 100%;">
-        <div class="col-auto " style="height: 100%;">
+        <div class="col-8" style="height: 100%;">
             <div class="align-middle" style="height: 100%;padding-top: 5%;display: flex;flex-direction: column;">
                 <div class="row justify-content-center" style="height: auto;">Carousel de imágenes:</div>
                 <div class="row m-0" style="height: auto;">
@@ -13,24 +13,20 @@
                     </div>
                 </div>
                 <!-- CONTENEDOR LINKS -->
-                <div class="overflow-auto" style="flex: auto;width: 100%;">
-
-                    <div class="list-group" *ngFor="let url of paths;let index=index;">
-                        <li class="list-group-item mt-1">
-                            <div class="row m-0 p-0">
-                                <div class="col-9 text-center">
-                                    {{url}}
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="btn btn-success"
-                                    (click)="removeImage(index)">-</button>
-                                </div>
+                <div class="overflow-auto">
+                    <br>
+                    <div *ngFor="let url of paths;let index=index">
+                        <div class="row m-0 ">
+                            <div class="col-9 justify-content-center">
+                                    <img [src]="url" alt=""  height="60px">
                             </div>
-                        </li>
+                            <div class="col">
+                                <button type="button" class="btn btn-success" 
+                                    (click)="removeImage(index)">-</button>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
-
-                    
-
                 </div>
             </div>
         </div>

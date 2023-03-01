@@ -85,9 +85,11 @@
                <!-- MULTIIMAGENES -->
                <div >
                   <app-multiimage-input *ngIf="!disabled"
+                  [paths]="images"
                   ></app-multiimage-input>
                   <app-multiimage-out *ngIf="disabled"
                   [isFullScreen]='true'
+                  [items]="imagesR"
                   ></app-multiimage-out>
                </div>
             </div>

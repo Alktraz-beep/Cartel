@@ -16,6 +16,7 @@
         
         <div class="body-formato">
           <!-- AQUI VIENEN LAS DIFERENTES FORMATOS -->
+          <!-- SE COMPARTEN LOS ATRIBUTOS DEL CARTEL -->
           <app-format-one 
           *ngIf="formato_actual=='f1'" class="fadeIn animated"
           [titulo_bg]="color[1]"
@@ -23,6 +24,7 @@
           [apartados_bg]="color[3]"
           [cartel]="cartel"
           [graficas]="graficas"
+          [images]="images"
           ></app-format-one>
 
           <app-format-two 
@@ -32,6 +34,7 @@
           [apartados_bg]="color[3]"
           [cartel]="cartel"
           [graficas]="graficas"
+          [images]="images"
           ></app-format-two>
 
           <app-format-three 
@@ -41,6 +44,7 @@
           [apartados_bg]="color[3]"
           [cartel]="cartel"
           [graficas]="graficas"
+          [images]="images"
           ></app-format-three>
         </div>
       </div>

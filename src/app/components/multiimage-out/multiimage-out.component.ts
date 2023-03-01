@@ -13,12 +13,7 @@ export class MultiimageOutComponent implements OnInit {
    */
   @Input() height: number | string =500;//por defecto 500px
   @Input() isFullScreen=false;
-  @Input() items: CarrouselItem[]=[
-    {id:1,image:'https://www.ibima.eu/wp-content/uploads/2020/03/Web_COVID_Metaslider-1.jpg'},
-    {id:2,image:'https://www.ibima.eu/wp-content/uploads/2020/03/Web_COVID_Metaslider-1.jpg'},
-    {id:3,image:'https://www.ibima.eu/wp-content/uploads/2020/03/Web_COVID_Metaslider-1.jpg'},
-    {id:4,image:'https://images.ctfassets.net/hrltx12pl8hq/a2hkMAaruSQ8haQZ4rBL9/8ff4a6f289b9ca3f4e6474f29793a74a/nature-image-for-website.jpg?fit=fill&w=480&h=320'}
-  ];//los items de carrousel
+  @Input() items: CarrouselItem[]=[ ];//los items de carrousel
 
   //VARIABLES POR DEFECTO
   public finalHeight:number | string =0;//el final height que se usará

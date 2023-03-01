@@ -53,12 +53,33 @@ export class ImageInputComponent implements OnInit {
     //TODO IF CON EL FORMATO Y SI ES GRAFICA O IMAGEN
     //SI ES LA GRAFICA O IMAGE #1
     if(this.tipo=="GRAF1" || this.tipo=="IMG1"){
+      //DEBE APLICAR CON TODOS LOS LINKS
+      if(this.url.includes('https://drive.google.com/')){
+        //SE OBTIENE EL ID DE LA URL
+        const regex = /\/d\/(.*?)\//;
+        const match = this.url.match(regex);
+        const id = match && match[1];                
+        //SE GENERA EL NUEVO LINK
+        this.url='https://drive.google.com/uc?export=view&id='+id;
+      }
       this.urlImg[0]=this.url;
       console.log("CAMBIO GRAF")
     }
     //SI ES LA GRAFICA O IMAGE #2
-    if(this.tipo=="GRAF2" || this.tipo=="IMG2")
+    if(this.tipo=="GRAF2" || this.tipo=="IMG2"){
+      //DEBE APLICAR CON TODOS LOS LINKS
+      if(this.url.includes('https://drive.google.com/')){
+        //SE OBTIENE EL ID DE LA URL
+        const regex = /\/d\/(.*?)\//;
+        const match = this.url.match(regex);
+        const id = match && match[1];                
+        //SE GENERA EL NUEVO LINK
+        this.url='https://drive.google.com/uc?export=view&id='+id;
+        
+      }
       this.urlImg[1]=this.url;
+    }
+      
     
     // this.cartel.titulo=this.url;
     // //ENVIA SEÑAL QUE YA EVIE LOS DATOS PARA EL PREVIEW

@@ -48,10 +48,12 @@
                 </div>
             </div>
             <!-- IMAGENES -->
-            <div style="width: 100%;">
-                <app-multiimage-input *ngIf="!disabled"></app-multiimage-input>
+            <div style="width: 100%; height: 100%;" class="overflow-auto apartado">
+                <app-multiimage-input *ngIf="!disabled"
+                [paths]="images"></app-multiimage-input>
                 <app-multiimage-out *ngIf="disabled"
                   [isFullScreen]='true'
+                  [items]="imagesR"
                   ></app-multiimage-out>
             </div>
         </div>

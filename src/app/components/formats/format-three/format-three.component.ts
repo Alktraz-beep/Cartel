@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Cartel } from '../../interface/cartel.interface';
+import { CarrouselItem } from '../../multiimage-out/interface.carouselmetadata';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class FormatThreeComponent implements OnInit {
   //ENTRADAS DE READONLY
   disabled:boolean=false;//dice si esta en modo readonly
   @Input() graficasR:string[]=[];
-  @Input() imagesR:string[]=[];
+  @Input() imagesR:CarrouselItem[]=[];
   //ENTRADAS
   @Input() titulo_bg:string="";
   
@@ -23,7 +24,8 @@ export class FormatThreeComponent implements OnInit {
   @Input() cartel!:Cartel;
   //LAS GRAFICAS E IMAGENES
   @Input() graficas!:string[];
-   //SE INYECTA SERVICIO
+  @Input() images!:string[];
+  //SE INYECTA SERVICIO
   constructor(private apiS:ApiService) { 
      //CUANDO SE EMITE EL READONLY
      apiS.readonly.subscribe(()=>{

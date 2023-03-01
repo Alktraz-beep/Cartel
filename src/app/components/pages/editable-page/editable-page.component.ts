@@ -7,6 +7,7 @@ import { Color } from '../../interface/color.class';
 import { ApiService } from '../../services/api.service';
 import { DialogComponent } from '../../dialog/dialog.component';
 import { stringify } from 'querystring';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-editable-page',
@@ -49,9 +50,9 @@ export class EditablePageComponent implements OnInit {
           this.cartel.formato=this.formato_actual;
           let colors=btoa(this.color.toString());//se encriptan el array de los colores 
           this.cartel.colores=colors;
-
           this.cartel.nombre=this.nombre;
-
+          this.cartel.imagenes=this.images.toString();
+          this.cartel.graficas=this.graficas.toString();
         
           //SE LLAMA A LA API PARA QUE GUARDE EL CARTEL
           
@@ -103,24 +104,31 @@ export class EditablePageComponent implements OnInit {
       ()=>{
         cont+=1;
         console.log(cont);
-        if(cont==11 ){
+        if(cont==13){
           //SE ACTUALIZA EL CARTEL
           this.cartel.formato=this.formato_actual;
           let colors=btoa(this.color.toString());//se encriptan el array de los colores 
-          this.cartel.colores=colors; 
-          console.log(this.graficas.toString());
+          this.cartel.colores=colors;
           this.cartel.graficas=this.graficas.toString();
-          //SE PONE LA REDIRECCION PRINCIPAL
-          const url = this.route.serializeUrl(
-            this.route.createUrlTree([`/preview`])
-          );
-
-
-          //SE REMPLAZA EL % POR SU CODIGO 
-          console.log(JSON.stringify(this.cartel).replace(/%/g,"/37"));
+          this.cartel.imagenes=this.images.toString();
           
-          window.open(url+"?cartel="+JSON.stringify(this.cartel).replace(/%/g,"/37").replace(/&/g,"/38"));
+          
+          //SE PONE LA REDIRECCION PRINCIPAL
+          // const url = this.route.serializeUrl(
+          //   this.route.createUrlTree(['/#/preview'],{queryParams:{
+          //     cartel: JSON.stringify(this.cartel).replace(/%/g,"/37").replace(/&/g,"/38")
+          //   }})
+          // );
+
+          const url= 'http://localhost/cartel/preview/#/?cartel='+JSON.stringify(this.cartel).replace(/%/g,"/37").replace(/&/g,"/38");
+          //SE REMPLAZA EL % POR SU CODIGO 
+          //console.log(JSON.stringify(this.cartel).replace(/%/g,"/37"));
+          //window.open(url+"?cartel="+JSON.stringify(this.cartel).replace(/%/g,"/37").replace(/&/g,"/38"));
+          console.log("redir "+url)
+          window.open(url);
+          //route.navigate(['/preview',{cartel: this.cartel}]);
           cont=0; 
+          
         }
       }
     );
